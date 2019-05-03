@@ -1,0 +1,4 @@
+Format : Nom - Lignes - Idées - Nom de la méthode de refactoring
+
+1) Marion - Lignes 60 et 79 - Déplacer getColorFor et getSizeFor dans la classe Product - Combine Functions into Class
+2) Marion - Lignes 45 et 53 - Créer une méthode pour les 2 if car ils font la même action - Consolidate Conditional Expression
