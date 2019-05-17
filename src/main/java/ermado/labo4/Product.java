@@ -36,7 +36,7 @@ public class Product {
         return currency;
     }
 
-    public String getSizeFor() {
+    public String getSizeName() {
         switch (this.getSize()) {
             case 1:
                 return "XS";
@@ -81,7 +81,7 @@ public class Product {
 
         if (this.getSize() != Product.SIZE_NOT_APPLICABLE) {
             sb.append("\"size\": \"");
-            sb.append(this.getSizeFor());
+            sb.append(this.getSizeName());
             sb.append("\", ");
         }
 
