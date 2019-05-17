@@ -36,7 +36,7 @@ public class Product {
         return currency;
     }
 
-    public String getSizeFor() {
+    public String getSizeName() {
         switch (this.getSize()) {
             case 1:
                 return "XS";
@@ -55,7 +55,7 @@ public class Product {
         }
     }
 
-    public String getColorFor() {
+    public String getColorName() {
         switch (this.getColor()) {
             case 1:
                 return "blue";
@@ -76,12 +76,12 @@ public class Product {
         sb.append(this.getCode());
         sb.append("\", ");
         sb.append("\"color\": \"");
-        sb.append(this.getColorFor());
+        sb.append(this.getColorName());
         sb.append("\", ");
 
         if (this.getSize() != Product.SIZE_NOT_APPLICABLE) {
             sb.append("\"size\": \"");
-            sb.append(this.getSizeFor());
+            sb.append(this.getSizeName());
             sb.append("\", ");
         }
 
