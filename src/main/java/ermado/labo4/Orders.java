@@ -10,7 +10,7 @@ public class Orders {
         orders.add(order);
     }
 
-    public int getOrdersCount() {
+    public int getSize() {
         return orders.size();
     }
 
@@ -22,7 +22,7 @@ public class Orders {
 
         StringBuffer sb = new StringBuffer();
 
-        for (int i = 0; i < this.getOrdersCount(); i++) {
+        for (int i = 0; i < this.getSize(); i++) {
             Order order = this.getOrder(i);
             sb.append("{");
             sb.append("\"id\": ");
@@ -40,7 +40,7 @@ public class Orders {
             sb.append("}, ");
         }
 
-        if (this.getOrdersCount() > 0) {
+        if (this.getSize() > 0) {
             sb.delete(sb.length() - 2, sb.length());
         }
 
