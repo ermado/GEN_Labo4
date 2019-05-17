@@ -10,69 +10,8 @@ public class OrdersWriter {
     public String getContents() {
         StringBuffer sb = new StringBuffer("{\"orders\": [");
 
-        sb.append(getOrdersToString());
+        sb.append(orders.getOrdersToString());
 
         return sb.append("]}").toString();
-    }
-
-    public StringBuffer getOrdersToString() {
-
-        StringBuffer sb = new StringBuffer();
-
-        for (int i = 0; i < orders.getOrdersCount(); i++) {
-            Order order = orders.getOrder(i);
-            sb.append("{");
-            sb.append("\"id\": ");
-            sb.append(order.getOrderId());
-            sb.append(", ");
-            sb.append("\"products\": [");
-
-            sb.append(getProductsToString(order));
-
-            if (order.getProductsCount() > 0) {
-                sb.delete(sb.length() - 2, sb.length());
-            }
-
-            sb.append("]");
-            sb.append("}, ");
-        }
-
-        if (orders.getOrdersCount() > 0) {
-            sb.delete(sb.length() - 2, sb.length());
-        }
-
-        return sb;
-    }
-
-    public StringBuffer getProductsToString(Order order) {
-
-        StringBuffer sb = new StringBuffer();
-
-        for (int j = 0; j < order.getProductsCount(); j++) {
-            Product product = order.getProduct(j);
-
-            sb.append("{");
-            sb.append("\"code\": \"");
-            sb.append(product.getCode());
-            sb.append("\", ");
-            sb.append("\"color\": \"");
-            sb.append(product.getColorFor());
-            sb.append("\", ");
-
-            if (product.getSize() != Product.SIZE_NOT_APPLICABLE) {
-                sb.append("\"size\": \"");
-                sb.append(product.getSizeFor());
-                sb.append("\", ");
-            }
-
-            sb.append("\"price\": ");
-            sb.append(product.getPrice());
-            sb.append(", ");
-            sb.append("\"currency\": \"");
-            sb.append(product.getCurrency());
-            sb.append("\"}, ");
-        }
-
-        return sb;
     }
 }
