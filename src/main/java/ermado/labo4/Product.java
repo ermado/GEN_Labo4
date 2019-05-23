@@ -1,7 +1,7 @@
 package ermado.labo4;
 
 public class Product {
-    public static final int SIZE_NOT_APPLICABLE = -1;
+    private static final int SIZE_NOT_APPLICABLE = -1;
     private String code;
     private int color;
     private int size;
@@ -16,27 +16,27 @@ public class Product {
         this.currency = currency;
     }
 
-    public String getCode() {
+    private String getCode() {
         return code;
     }
 
-    public int getColor() {
+    private int getColor() {
         return color;
     }
 
-    public int getSize() {
+    private int getSize() {
         return size;
     }
 
-    public double getPrice() {
+    private double getPrice() {
         return price;
     }
 
-    public String getCurrency() {
+    private String getCurrency() {
         return currency;
     }
 
-    public String getSizeName() {
+    private String getSizeName() {
         switch (this.getSize()) {
             case 1:
                 return "XS";
@@ -55,7 +55,7 @@ public class Product {
         }
     }
 
-    public String getColorName() {
+    private String getColorName() {
         switch (this.getColor()) {
             case 1:
                 return "blue";

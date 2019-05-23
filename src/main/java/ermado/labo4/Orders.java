@@ -10,11 +10,11 @@ public class Orders {
         orders.add(order);
     }
 
-    public int getSize() {
+    private int getSize() {
         return orders.size();
     }
 
-    public Order getOrder(int i) {
+    private Order getOrder(int i) {
         return orders.get(i);
     }
 
