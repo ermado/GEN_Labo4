@@ -19,7 +19,7 @@ public class Order {
         return products.size();
     }
 
-    public Product getProduct(int j) {
+    private Product getProduct(int j) {
         return products.get(j);
     }
 
